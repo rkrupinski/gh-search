@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+.c0 {
+  box-sizing: border-box;
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 2;
+  border: 0;
+  border-radius: .5rem;
+  color: #000;
+  background: #f0f3f4;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #777;
+}
+
+.c0::-moz-placeholder {
+  color: #777;
+}
+
+.c0:-ms-input-placeholder {
+  color: #777;
+}
+
+.c0::placeholder {
+  color: #777;
+}
+
+<input
+  autocomplete="off"
+  class="c0"
+  placeholder="Placeholder test"
+  type="text"
+  value="Value test"
+/>
+`;
+
+exports[`Input should render correctly 2`] = `
+<input
+  class="sc-AxjAm bGFZxr"
+  value="Value test 2"
+/>
+`;

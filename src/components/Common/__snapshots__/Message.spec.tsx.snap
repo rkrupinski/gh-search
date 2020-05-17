@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message should let one delay the appearance 1`] = `
+.c0 {
+  margin: calc(1rem * 3) 0;
+  text-align: center;
+  word-wrap: break-word;
+  color: #777;
+  opacity: 0;
+  -webkit-animation-name: efKvNv;
+  animation-name: efKvNv;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 50ms;
+  animation-duration: 50ms;
+  -webkit-animation-delay: 1000ms;
+  animation-delay: 1000ms;
+}
+
+.c0:before {
+  content: "⏳";
+  margin-right: 0.25rem;
+}
+
+<p
+  class="c0"
+  type="loading"
+>
+  Loading delayed
+</p>
+`;
+
+exports[`Message should render error message 1`] = `
+.c0 {
+  margin: calc(1rem * 3) 0;
+  text-align: center;
+  word-wrap: break-word;
+  color: #777;
+  opacity: 0;
+  -webkit-animation-name: efKvNv;
+  animation-name: efKvNv;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 50ms;
+  animation-duration: 50ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+}
+
+.c0:before {
+  content: "💩";
+  margin-right: 0.25rem;
+}
+
+<p
+  class="c0"
+  type="error"
+>
+  Error
+</p>
+`;
+
+exports[`Message should render loading message 1`] = `
+.c0 {
+  margin: calc(1rem * 3) 0;
+  text-align: center;
+  word-wrap: break-word;
+  color: #777;
+  opacity: 0;
+  -webkit-animation-name: efKvNv;
+  animation-name: efKvNv;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: 50ms;
+  animation-duration: 50ms;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+}
+
+.c0:before {
+  content: "⏳";
+  margin-right: 0.25rem;
+}
+
+<p
+  class="c0"
+  type="loading"
+>
+  Loading
+</p>
+`;
