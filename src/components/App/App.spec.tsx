@@ -122,7 +122,7 @@ describe("App", () => {
 
     expect(actions.loadUser).toHaveBeenCalledWith(username);
 
-    expect(actions.loadRepos).not.toHaveBeenCalledWith();
+    expect(actions.loadRepos).not.toHaveBeenCalled();
   });
 
   it("should render user details", () => {
