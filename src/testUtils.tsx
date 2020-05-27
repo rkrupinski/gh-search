@@ -15,8 +15,6 @@ export const renderWithProviders = (
   options?: Omit<RenderOptions, "queries" | "wrapper">,
 ) => render(ui, { wrapper: Providers, ...options });
 
-export const timeout = (wait = 0) => new Promise(resolve => setTimeout(resolve, wait));
-
 export const noop = () => {
   /**/
 };

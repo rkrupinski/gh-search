@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent } from "@testing-library/react";
+import { fireEvent, waitFor } from "@testing-library/react";
 import * as store from "store";
 import * as SearchForm from "components/SearchForm/SearchForm";
 import * as UserDetails from "components/UserDetails/UserDetails";
@@ -7,7 +7,7 @@ import * as Repos from "components/Repos/Repos";
 import { User } from "codecs/User";
 import { Repo } from "codecs/Repo";
 import { idle, success, Resource } from "utils/resource";
-import { renderWithProviders, timeout } from "testUtils";
+import { renderWithProviders } from "testUtils";
 import * as actions from "./actions";
 import * as selectors from "./selectors";
 import { App } from "./App";
@@ -80,25 +80,24 @@ describe("App", () => {
 
     fireEvent.click(getByTestId("button"));
 
-    await timeout();
+    await waitFor(() => {
+      expect(actions.loadUser).toHaveBeenCalledWith(username);
+      expect(actions.loadRepos).toHaveBeenCalledWith(username);
 
-    expect(actions.loadUser).toHaveBeenCalledWith(username);
-
-    expect(actions.loadRepos).toHaveBeenCalledWith(username);
-
-    expect(dispatch.mock.calls).toMatchInlineSnapshot(`
-      Array [
+      expect(dispatch.mock.calls).toMatchInlineSnapshot(`
         Array [
-          [MockFunction mockResetData],
-        ],
-        Array [
-          [MockFunction mockLoadUser],
-        ],
-        Array [
-          [MockFunction mockLoadRepos],
-        ],
-      ]
-    `);
+          Array [
+            [MockFunction mockResetData],
+          ],
+          Array [
+            [MockFunction mockLoadUser],
+          ],
+          Array [
+            [MockFunction mockLoadRepos],
+          ],
+        ]
+      `);
+    });
   });
 
   it("should not load repos if loading user fails", async () => {
@@ -118,9 +117,9 @@ describe("App", () => {
 
     fireEvent.click(getByTestId("button"));
 
-    await timeout();
-
-    expect(actions.loadUser).toHaveBeenCalledWith(username);
+    await waitFor(() => {
+      expect(actions.loadUser).toHaveBeenCalledWith(username);
+    });
 
     expect(actions.loadRepos).not.toHaveBeenCalled();
   });

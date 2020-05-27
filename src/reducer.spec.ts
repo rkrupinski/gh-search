@@ -62,22 +62,22 @@ describe("reducer", () => {
     );
 
     expect(actual).toMatchInlineSnapshot(`
-Object {
-  "repos": Object {
-    "data": Array [
       Object {
-        "html_url": "https://github.com",
-        "id": 1,
-        "name": "test",
-        "stargazers_count": 1,
-      },
-    ],
-    "tag": "success",
-  },
-  "user": Object {
-    "tag": "idle",
-  },
-}
-`);
+        "repos": Object {
+          "data": Array [
+            Object {
+              "html_url": "https://github.com",
+              "id": 1,
+              "name": "test",
+              "stargazers_count": 1,
+            },
+          ],
+          "tag": "success",
+        },
+        "user": Object {
+          "tag": "idle",
+        },
+      }
+    `);
   });
 });
